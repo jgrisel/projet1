@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-12T07:47:22.940775600Z</date>
+  <millis>1649749642940</millis>
+  <nanos>775600</nanos>
+  <sequence>1</sequence>
+  <logger>TestCreationParticipantClass</logger>
+  <level>INFO</level>
+  <class>TestCreationParticipantClass</class>
+  <method>test</method>
+  <thread>1</thread>
+  <message>AAAAAAAAAAAAAAAAAAAAAAAA</message>
+</record>
+<record>
+  <date>2022-04-12T07:47:38.958540100Z</date>
+  <millis>1649749658958</millis>
+  <nanos>540100</nanos>
+  <sequence>2</sequence>
+  <logger>TestCreationParticipantClass</logger>
+  <level>INFO</level>
+  <class>TestCreationParticipantClass</class>
+  <method>test</method>
+  <thread>1</thread>
+  <message>Exception while taking screenshot Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //tr[@valign='top']//span[text()='Calendrier']' (tried for 15 second(s) with 500 milliseconds interval)</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-12T07:48:02.850591600Z</date>
+  <millis>1649749682850</millis>
+  <nanos>591600</nanos>
+  <sequence>1</sequence>
+  <logger>TestCreationParticipantClass</logger>
+  <level>INFO</level>
+  <class>TestCreationParticipantClass</class>
+  <method>test</method>
+  <thread>1</thread>
+  <message>AAAAAAAAAAAAAAAAAAAAAAAA</message>
+</record>
+<record>
+  <date>2022-04-12T07:48:07.084962700Z</date>
+  <millis>1649749687084</millis>
+  <nanos>962700</nanos>
+  <sequence>2</sequence>
+  <logger>TestCreationParticipantClass</logger>
+  <level>SEVERE</level>
+  <class>TestCreationParticipantClass</class>
+  <method>test</method>
+  <thread>1</thread>
+  <message>MMMMMMMMMMMMMMMMMMMM</message>
+</record>
+</log>

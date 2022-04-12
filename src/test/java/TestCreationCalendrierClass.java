@@ -3,6 +3,8 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.FileInputStream;
 import java.util.Properties;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
 
 import org.junit.After;
 import org.junit.Before;
@@ -19,6 +21,7 @@ public class TestCreationCalendrierClass {
 	
 	WebDriver driver;
 	WebDriverWait wait;
+	Logger logger = Logger.getLogger(TestCreationCalendrierClass.class.getName());
 
 	@Before
 
@@ -50,15 +53,20 @@ public class TestCreationCalendrierClass {
 		
 		wait = new WebDriverWait(driver, 15); // Explicit wait
 		
+		// Create an instance of FileHandler that write log to a file called app.log. Each new message will be appended at the at of the log file.
+        FileHandler fileHandler = new FileHandler("app.log", true);
+        logger.addHandler(fileHandler);
+		
+        try {
 		  //vérifier que la page est correcte
 	    assertEquals("LibrePlan: accès utilisateur", driver.getTitle());
 	    
 	    //initialiser la PageConnexion
 	    PageConnexion page_connexion = PageFactory.initElements(driver, PageConnexion.class);
 	    
-	    
+	    logger.info("AAAAAAAAAAAAAAAAAAAAAAAA"); 
 	    //se connecter à la page d'accueil
-	    PageAccueil page_accueil = page_connexion.logIn(driver, "admin", "admin");
+	    PageAccueil page_accueil = page_connexion.logIn(driver,"admin","admin");
 	    
 	    //vérification page accueil
 	    WebElement fil_d_ariane_calendrier = wait.until(ExpectedConditions.visibilityOf(page_accueil.fil_d_ariane_calendrier)); // Explicit wait
@@ -79,6 +87,7 @@ public class TestCreationCalendrierClass {
 	    		&&colonne_hérité_date.isDisplayed()&&colonne_héritage_a_jour.isDisplayed();
 
        assertTrue(verifPage1);
+       logger.severe("MMMMMMMMMMMMMMMMMMMM");
 	   
 	   //accéder à la page de création des calendriers
 	   
@@ -210,6 +219,11 @@ public class TestCreationCalendrierClass {
 			boolean verifPage15 = message_suppression_test_1.isDisplayed()&& message_suppression_test_2.isDisplayed()&&message_suppression_test_dérivé.isDisplayed();
 
 	       assertTrue(verifPage15);
+        } catch (Exception e) {
+			PageListeCalendrier.takeSnapShot(driver, PageListeCalendrier.getNameFile());
+			logger.info("Exception while taking screenshot "+e.getMessage());
+			throw e;
+		}
 	      
 	}
 

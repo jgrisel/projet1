@@ -78,6 +78,7 @@ public class PageListeCalendrier extends PageBandeau {
 	    public WebElement Message_supression_test_dérivé;
 		
 		
+		
 		//fonction pour accéder à la page de création des calendriers
 		public PageCreationCalendrier clicCreerCalendrier(WebDriver driver) {
 		Créer_button.click();
